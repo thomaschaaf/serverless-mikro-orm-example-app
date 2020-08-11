@@ -1,0 +1,41 @@
+{
+  "name": "serverless-mikro-orm-example-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "schema": "mikro-orm schema:create -r",
+    "dev": "sls offline start --noPrependStageInUrl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomaschaaf/serverless-mikro-orm-example-app.git"
+  },
+  "author": "Thomas Schaaf <thomas.schaaf@finanzcheck.de> (https://www.finanzcheck.de/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomaschaaf/serverless-mikro-orm-example-app/issues"
+  },
+  "homepage": "https://github.com/thomaschaaf/serverless-mikro-orm-example-app#readme",
+  "devDependencies": {
+    "@mikro-orm/cli": "^4.0.0-rc.1",
+    "@mikro-orm/migrations": "^4.0.0-rc.1",
+    "serverless": "^1.78.1",
+    "serverless-bundle": "^2.0.0",
+    "serverless-offline": "^6.5.0",
+    "ts-node": "^8.10.2"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "^4.0.0-rc.1",
+    "@mikro-orm/mysql": "^4.0.0-rc.1",
+    "@mikro-orm/sql-highlighter": "^1.0.1",
+    "@mikro-orm/sqlite": "^4.0.0-rc.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/mikro-orm.config.ts"
+    ]
+  }
+}

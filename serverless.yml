@@ -1,0 +1,34 @@
+service: serverless-mikro-orm-example-app
+
+plugins:
+  - serverless-bundle
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 1024
+
+custom:
+  bundle:
+    tsConfig: "tsconfig.json"
+    sourcemaps: false
+    forceInclude:
+      - mysql
+    externals:
+      - "@mikro-orm/core"
+
+functions:
+  author:
+    handler: src/handlers/author.handler
+    events:
+      - http:
+          method: get
+          path: author
+
+  book:
+    handler: src/handlers/book.handler
+    events:
+      - http:
+          method: get
+          path: book
