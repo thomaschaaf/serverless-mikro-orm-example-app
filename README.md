@@ -10,13 +10,21 @@ Available routes:
 
 ```
 GET     /author        finds all authors
+```
+
+```
+GET     /book          finds all books
+```
+
+Coming soon:
+
+```
 GET     /author/:id    finds author by id
 POST    /author        creates new author
 PUT     /author/:id    updates author by id
 ```
 
 ```
-GET     /book          finds all books
 GET     /book/:id      finds book by id
 POST    /book          creates new book
 PUT     /book/:id      updates book by id
