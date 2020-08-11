@@ -12,8 +12,8 @@ export const config: Options = {
   // as we are using class references here, we don't need to specify `entitiesTs` option
   entities: [Author, Book, BookTag, Publisher, BaseEntity],
   highlighter: new SqlHighlighter(),
+  discovery: { disableDynamicFileAccess: true },
   // debug: true,
-  // discovery: { disableDynamicFileAccess: true },
 };
 
 export default config;
