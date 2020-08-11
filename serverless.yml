@@ -12,6 +12,7 @@ provider:
 custom:
   bundle:
     tsConfig: "tsconfig.json"
+    # setting the sourcemaps to true breaks everything..
     sourcemaps: false
     forceInclude:
       - mysql
