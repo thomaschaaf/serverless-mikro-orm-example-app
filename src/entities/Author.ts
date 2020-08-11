@@ -4,24 +4,15 @@ import {
   Entity,
   OneToMany,
   Property,
-  PrimaryKey,
   ManyToOne,
   Unique,
 } from "@mikro-orm/core";
 
 import { Book } from ".";
+import { BaseEntity } from "./BaseEntity";
 
 @Entity()
-export class Author {
-  @PrimaryKey()
-  id!: number;
-
-  @Property()
-  createdAt: Date = new Date();
-
-  @Property({ onUpdate: () => new Date() })
-  updatedAt: Date = new Date();
-
+export class Author extends BaseEntity {
   @Property()
   name: string;
 
@@ -45,6 +36,7 @@ export class Author {
   favouriteBook?: Book;
 
   constructor(name: string, email: string) {
+    super();
     this.name = name;
     this.email = email;
   }
